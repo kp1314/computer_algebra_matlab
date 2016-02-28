@@ -1,0 +1,23 @@
+real_c = -2.1;
+imag_c = -1.2;
+i = 1;
+hold on
+while (real_c <= 0.7) 
+  while (imag_c <= 1.2)
+    k = 0;
+    c = complex(real_c, imag_c); 
+    Zn = 0;
+    while (k < 150 && abs(Zn) <= 2)
+      condition = 0;
+      Zn = Zn.*Zn + c;
+      k = k + 1;  
+      if (k == 150)
+      plot(c,'*');
+      end
+    end
+    imag_c = imag_c + 0.001;
+  end
+ real_c = real_c + 0.001;
+ imag_c = -1.2;
+end
+hold off
